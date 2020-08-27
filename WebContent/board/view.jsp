@@ -1,8 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="java.util.Random"%>
-<%@ page import="java.util.Date"%>
-<%@ page import="java.text.SimpleDateFormat"%>
 
 <!doctype html>
 <html lang="en">
@@ -19,7 +16,7 @@
 	crossorigin="anonymous">
 
 <style>
-.list-box {
+.view-box {
 	margin-top: 100px;
 }
 </style>
@@ -29,7 +26,7 @@
 <body>
 	<div class="container">
 	<!-- 글 내용 -->
-		<div class="card list-box">
+		<div class="card view-box">
 			<div class="card-header">애국가</div>
 			<div class="card-body">
 				<h5 class="card-title">안녕하세요</h5>
@@ -50,7 +47,7 @@
 		</div>
 		<!-- 댓글 -->
 		<div class="card" style="margin-top:20px;">
-			<div class="card-header">댓글</div>
+			<div class="card-header">댓글 (0)</div>
 			<div class="card-body">
 				<div>
 					<form>

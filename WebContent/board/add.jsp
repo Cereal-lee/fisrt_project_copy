@@ -1,8 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="java.util.Random"%>
-<%@ page import="java.util.Date"%>
-<%@ page import="java.text.SimpleDateFormat"%>
 
 <!doctype html>
 <html lang="en">
@@ -19,56 +16,37 @@
 	crossorigin="anonymous">
 
 <style>
-.list-box {
+.add-box {
 	margin-top: 100px;
 }
 </style>
 
-<title>게시판 - 목록</title>
+<title>게시판 - 등록</title>
 </head>
 <body>
 	<div class="container">
-		<div class="list-box">
-			<div class="card">
-				<div class="card-header">
-					<a href="/board/add.jsp" class="btn btn-primary">등록</a>
-				</div>
-				<div class="card-body">
-					<table class="table table-hover">
-						<thead class="thead-dark">
-							<tr>
-								<th>번호</th>
-								<th>제목</th>
-								<th>글쓴이</th>
-								<th>작성일시</th>
-							</tr>
-						</thead>
-						<tbody>
-							<%
-								SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-
-							String name[] = { "홍길동", "최민수", "김영수", "김아름", "박문수" };
-
-							for (int i = 1; i <= 10; i++) {
-								Random random = new Random();
-								int randomInt = random.nextInt(5);
-								String randomName = name[randomInt];
-
-								Date now = new Date();
-								String today = format.format(now);
-								String randomTitle = "안녕하세요";
-							%>
-							<tr>
-								<td><%=i%></td>
-								<td><a href="/board/view.jsp"><%=randomTitle%></a></td>
-								<td><%=randomName%></td>
-								<td><%=today%></td>
-							</tr>
-							<%
-								}
-							%>
-						</tbody>
-					</table>
+		<!-- 글 내용 -->
+		<div class="card add-box">
+			<div class="card-body">
+				<form name="addForm" method="post" action="/board/add">
+					<div class="form-group">
+						<label>이름</label> 
+						<input type="text" class="form-control">
+					</div>
+					<div class="form-group">
+						<label>제목</label> 
+						<input type="text" class="form-control">
+					</div>
+					<div class="form-group">
+						<label>내용</label> 
+						<textarea class="form-control" rows="10"></textarea>
+					</div>
+				</form>
+			</div>
+			<div class="card-footer">
+				<a href="/board/list.jsp" class="btn btn-primary">목록</a>
+				<div class="float-right">
+					<button type="button" class="btn btn-success" id="btnAdd">등록</button>
 				</div>
 			</div>
 		</div>
@@ -87,5 +65,11 @@
 		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
 		integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
 		crossorigin="anonymous"></script>
+
+	<script>
+		$('#btnAdd').on('click', function() {
+			$('form[name=addForm]').submit();
+		});
+	</script>
 </body>
 </html>
