@@ -61,7 +61,7 @@
 			  		<div class="card-footer">
 			  			<button type="button" class="btn btn-primary">회원가입</button>
 			  			<div class="float-right">
-			  				<a href="/firstProject/ex01/auth/login.jsp">로그인</a>
+			  				<a href="/auth/login.jsp">로그인</a>
 			  			</div>
 			  		</div>
 				</div>

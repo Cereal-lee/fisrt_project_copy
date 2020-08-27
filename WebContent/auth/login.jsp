@@ -49,7 +49,7 @@
 			  		<div class="card-footer">
 			  			<button type="button" class="btn btn-primary">로그인</button>
 			  			<div class="float-right">
-			  				<a href="/firstProject/ex01/auth/registor.jsp">회원가입</a>
+			  				<a href="/auth/registor.jsp">회원가입</a>
 			  			</div>
 			  		</div>
 				</div>

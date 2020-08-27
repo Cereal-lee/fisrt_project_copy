@@ -3,7 +3,7 @@ package ex01;
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
-import javax.servlet.annotation.WerbServlet;
+import javax.servlet.annotation.WebServlet;
 
 @WebServlet(urlPatterns = "/ex01/ex01")
 
